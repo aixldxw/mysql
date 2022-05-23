@@ -1,0 +1,30 @@
+1对1的关系，需要在一方增加另外一方的信息，这个信息叫做外键
+
+create table t_stu 
+	(id int(10) primary key auto_increment, 
+	 name varchar(100), 
+	 age int(10), 
+	 no varchar(100), 
+	 uid int(10),
+	 CONSTRAINT FOREIGN KEY (uid) REFERENCES t_user1 (id));
+
+insert into t_stu (name,age,no,uid) value ('张小二',22,'001',3);
+insert into t_stu (name,age,no,uid) value ('李小四',22,'001',null);
+
+1对多，在多的一方加外键
+
+create table t_classroom (id int primary key auto_increment,name varchar(100),grade varchar(100));
+
+多对多，增加关联表
+create table t_course(id int primary key auto_increment,name varchar(100));
+create table t_stu_course(id int primary key auto_increment,sid int(10),cid int(10),ach float);
+
+作业：从零开始完成专业,班级，学生，成绩，学院，教师结构的设计
+
+关系是:
+
+学生表:(xx,xx,xx,xx)
+
+创建表:SQL
+
+每条表中插入一些数据
